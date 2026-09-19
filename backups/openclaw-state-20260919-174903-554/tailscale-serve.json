@@ -1,0 +1,8 @@
+﻿cmd : must specify either --service=svc:<service-name> or --all
+위치 줄:1 문자:918
++ ...  -Encoding utf8 } }; cmd /c 'tailscale serve get-config' 2>&1 | Out-F ...
++                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (must specify ei...-name> or --all 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
