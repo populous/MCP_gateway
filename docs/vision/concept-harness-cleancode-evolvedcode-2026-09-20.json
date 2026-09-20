@@ -1,0 +1,47 @@
+{
+  "artifact_id": "thread-2026-09-20-harness-cleancode-evolvedcode",
+  "created_at": "2026-09-20T20:52:00+09:00",
+  "thesis": "하네스, 클린코드, 진화코드는 위계 관계가 아니라 서로 다른 실패모드를 담당하는 3축 좌표계이다.",
+  "concepts": [
+    {
+      "concept_id": "harness",
+      "label_ko": "하네스",
+      "role": "장시간 에이전트 실행의 컨텍스트/목표 관리 레이어",
+      "controls": ["컨텍스트 오버플로우", "목표 상실", "검증 게이트"],
+      "does_not_control": ["코드 자체의 품질이나 최적성"],
+      "stack_layer": "Layer2_HarnessGate"
+    },
+    {
+      "concept_id": "clean_code",
+      "label_ko": "클린코드",
+      "role": "에이전트가 주 독자(primary reader)인 시대의 효율성 규율",
+      "controls": ["토큰 효율", "파일 재방문 비용", "탐색 비용"],
+      "does_not_control": ["정답률(pass rate) 자체는 불변"],
+      "evidence": [
+        "660건 규모 Claude Code 통제실험: 클린니스가 pass rate는 불변, 토큰 7~8% 절감, 파일 재방문 34% 감소",
+        "AkitaOnRails 2026-04: 함수 4~20줄, 파일 500줄 이하, grep-hit 5건 미만 네이밍, any/Dict 금지",
+        "Vanguard 2026-02: 클린코드는 스타일이 아니라 검증가능성(verifiability) 문제",
+        "Agent Wars: 에이전트는 클린 저장소에서도 표면 스타일만 모방, 아키텍처 의도는 CLAUDE.md로 명시 필요"
+      ],
+      "stack_layer": "Layer2_HarnessGate"
+    },
+    {
+      "concept_id": "evolved_code",
+      "label_ko": "진화코드",
+      "role": "객관적 평가함수 기준의 알고리즘 최적화 루프",
+      "controls": ["객관적 지표 기준 알고리즘 최적성 (속도, 메모리 등)"],
+      "does_not_control": ["평가함수가 없는 주관적/가독성 목표"],
+      "evidence": [
+        "AlphaEvolve: Gemini Flash(다양성)+Pro(깊이) 비동기 개체군 진화, 컴파일-실행-평가 검증",
+        "CodeEvolve: LLM + 유전 알고리즘 결합, '자율 협력 에이전트' 패러다임",
+        "remio AI: 성공 상태는 반드시 수학적/프로그래밍적으로 검증 가능해야 함"
+      ],
+      "stack_layer": "Layer4_EvolutionLoop"
+    }
+  ],
+  "integration_recommendation": {
+    "layer2_addition": "클린코드 린트 규칙(함수 20줄 이하, grep-hit<5 네이밍)을 하네스 게이트 검증 조건에 추가",
+    "layer4_addition": "진화 루프 평가함수에 빌드성공/테스트커버리지뿐 아니라 토큰 소비량·파일 재방문 수 포함"
+  },
+  "source_thread_topic": "지식협력 미들웨어 - 하네스/클린코드/진화코드 개념 관계"
+}
